@@ -3,8 +3,8 @@ class Num:
         self.n = 0
         self.low = max
         self.high = min
-        self.col_at = column_at
-        self.name = given_name
+        self.col_at = column_at if column_at != None else 0
+        self.name = given_name if given_name != None else ''
         self.is_sorted = False
         self.data = []
-        #TODO: Add W, or weight
+        self.w = -1 if given_name != None and given_name[-1] == '-' else 1
