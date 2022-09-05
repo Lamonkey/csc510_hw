@@ -16,12 +16,12 @@ class Cols:
             
             # if it doesn't end with a :,
             if name[-1] != ':':
-                # add it as a dependent (Y) column if it ends with + or -, or independent (X) otherwise
-                if name[-1] == '+' or name[-1] == '-':
+                # add it as a dependent (Y) column if it ends with +, -, or !, or independent (X) otherwise
+                if name[-1] in ['+', '-', '!']:
                     self.y_columns.append(col)
                 else:
                     self.x_columns.append(col)
                 
-                # if the name is just !, it is the klass column
-                if name == '!':
+                # if the name ends with !, it is the klass column
+                if name[-1] == '!':
                     self.klass = col
