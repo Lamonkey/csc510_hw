@@ -1,4 +1,5 @@
 import random as rn
+from Utility import *
 
 class Num:
     def __init__(self, column_at, given_name):
@@ -30,5 +31,10 @@ class Num:
             self.is_sorted = False
             self.data[pos] = float(v) # TODO float or int?
     
-    # TODO div and mid, need function 'per' to be implemented
+    def div(self):
+        a = self.nums()
+        return (Utility.per(a, 0.9) - Utility.per(a, 0.1))/2.58
+    
+    def mid(self):
+        return Utility.per(self.nums(), 0.5)
             
