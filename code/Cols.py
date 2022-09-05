@@ -1,4 +1,5 @@
-import Num, Sym
+from code.Num import Num
+from code.Sym import Sym
 
 class Cols:
     def __init__(self, names):
@@ -10,7 +11,7 @@ class Cols:
         # iterate through names and also index
         for i, name in enumerate(names):
             # if the name starts with an uppercase letter, it is Numeric
-            col = Num.Num(i, name) if name[0].isupper() else Sym.Sym(i, name)
+            col = Num(i, name) if name[0].isupper() else Sym(i, name)
             self.columns.append(col)
             
             # if it doesn't end with a :,
