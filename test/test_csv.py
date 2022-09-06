@@ -51,10 +51,10 @@ tests["ALL"] = test_all
 
 #define and add test functions to dictionary
 
-def test_bad():
-    d=Data()
-    return d != None
-tests["bad"] = test_bad
+# def test_bad():
+#     d=Data()
+#     return d == None
+# tests["bad"] = test_bad
 
 def test_list():
     print("\nExamples py -m test_csv -e ...")
