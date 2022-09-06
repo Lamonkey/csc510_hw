@@ -1,5 +1,5 @@
 import random as rn
-from Utility import *
+from code.Utility import *
 
 class Num:
     def __init__(self, column_at, given_name):

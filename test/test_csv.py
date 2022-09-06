@@ -1,7 +1,7 @@
 from code.Data import *
 from code.arithmetic import *
 import sys
-file_name = "../data/auto93.csv"
+file_name = "data/auto93.csv"
 
 num_fails = 0
 dump = False
@@ -51,10 +51,10 @@ tests["ALL"] = test_all
 
 #define and add test functions to dictionary
 
-def test_bad():
-    d=Data()
-    return d != None
-tests["bad"] = test_bad
+# def test_bad():
+#     d=Data()
+#     return d == None
+# tests["bad"] = test_bad
 
 def test_list():
     print("\nExamples py -m test_csv -e ...")
