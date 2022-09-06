@@ -1,7 +1,7 @@
 from code.Data import *
 from code.arithmetic import *
 import sys
-file_name = "../data/auto93.csv"
+file_name = "data/auto93.csv"
 
 num_fails = 0
 dump = False
