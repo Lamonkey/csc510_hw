@@ -33,8 +33,8 @@ class Num:
     
     def div(self):
         a = self.nums()
-        return (Utility.per(a, 0.9) - Utility.per(a, 0.1))/2.58
+        return (per(a, 0.9) - per(a, 0.1))/2.58
     
     def mid(self):
-        return Utility.per(self.nums(), 0.5)
+        return per(self.nums(), 0.5)
             
