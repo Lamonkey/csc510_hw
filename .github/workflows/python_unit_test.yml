@@ -32,4 +32,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with custom test engine
       run: |
-        cd test && python -m test_csv
+        export PYTHONPATH=$PYTHONPATH:/data 
+        export PYTHONPATH=$PYTHONPATH:/code
+        export PYTHONPATH=$PYTHONPATH:/test
+        python3 -m test.test_csv
