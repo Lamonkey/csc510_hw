@@ -1,4 +1,5 @@
 import re
+import sys
 
 help='''
 CSV : summarized csv file
@@ -13,41 +14,39 @@ OPTIONS:
  -s --seed random number seed = 10019
  -S --seperator feild seperator = ,'''
 
-def coerce(s):
-    def fun(s1):
-        if s1=='true':
-            return True
-        if s1=='false':
-            return False
-        return s1
-    if s.isdigit():
-        return int(s)
-    try:
-        float(s)
-        return float(s)
-    except ValueError:
-        return fun(re.match("^\s*(.*?)\s*$", s).groups()[0])
+class config:
+    def __init__(self, help):
+        self.the = {}
+        for k, x in re.findall('\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):
+            self.the[k] = self.coerce(x)
 
-the = {}
-for k, x in re.findall('\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):
-    the[k] = coerce(x)
-print(the)
-for i in the.keys():
-    print(i)
-    print(the[i])
+    def coerce(self, s):
+        def fun(s1):
+            if s1.lower()=='true':
+                return True
+            if s1.lower()=='false':
+                return False
+            return s1
+        if s.isdigit():
+            return int(s)
+        try:
+            float(s)
+            return float(s)
+        except ValueError:
+            return fun(re.match("^\s*(.*?)\s*$", s).groups()[0])
 
-def cli(t, args):
-    for slot in t.keys():
-        v = str(t[slot])
-        for x in args:
-            if (x=="-" + slot[0]) or (x=="--" + slot):
-                if v == 'false':
-                    v = True
-                elif v == 'true':
-                    v = False
-                else:
-                    v = args[-1]
-        t[slot] = coerce(v)
-    if t['help']:
-        print("\n" + help + "\n")
-    return t
+    def cli(self, args):
+        for slot in self.the.keys():
+            v = str(self.the[slot])
+            for x in args:
+                if (x=="-" + slot[0]) or (x=="--" + slot):
+                    if v == 'false':
+                        v = True
+                    elif v == 'true':
+                        v = False
+                    else:
+                        v = args[-1]
+            self.the[slot] = self.coerce(v)
+        if self.the['help']:
+            print("\n" + help + "\n")
+        return self.the
