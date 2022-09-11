@@ -16,44 +16,66 @@ OPTIONS:
 
 class config:
     def __init__(self, help):
-        self.the = {}
+        self.the = {}  # Initialize 'the' to map command line arguments to their associated value
+        # For each line in the given help statement, build a new mapping in 'the'
         for k, x in re.findall('\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):
             self.the[k] = self.coerce(x)
-#use command in help message to set key and value for the variable
+
     def coerce(self, s):
-  #Processing string into boolean, otherwise just return s1
+        '''
+        This function processes a string that needs to be converted to either a boolean, int, float, or remain a string
+
+         - s: This parameter is the string that must be processed and refers to the output mapping in 'the'
+
+        returns: The converted string
+        '''
         def fun(s1):
+            # If the lowercase value of the given string is 'true' or 'false', return the associated boolean value
             if s1.lower()=='true':
                 return True
             if s1.lower()=='false':
                 return False
+            # Otherwise return the original string
             return s1
-        #if s is int
-        if s.isdigit():
+        if s.isdigit(): # If s can be converted to an int, return the int of the string
             return int(s)
-        #if s is float
-        try:
+        try: # Try to convert the string to a float and return the float value
             float(s)
             return float(s)
-         #if s is string
-        except ValueError:
+        except ValueError: # If the string cannot be converted to a float then run regex to return string
             return fun(re.match("^\s*(.*?)\s*$", s).groups()[0])
 
     def cli(self, args):
-        for slot in self.the.keys():
-            v = str(self.the[slot])
-        #for loop every args, and override value of the key variable with matched args input
-            for x in args:
-          #slot[0] is shortcut for slot, both are acceptable
-                if (x=="-" + slot[0]) or (x=="--" + slot):
-                    if v == 'false':
-                        v = True
-                    elif v == 'true':
-                        v = False
+        '''
+        This function processes the command line arguments and updates the mappings in 'the'
+
+         - args: The list of arguments normally in the example format "-h -n 100"
+
+        returns: The updated 'the' dictionary
+        '''
+        for slot in self.the.keys(): # For each mapping in fun
+            v = str(self.the[slot]) # Convert the output mapping to a string
+            for i, x in enumerate(args): # For each argument given
+                # If the argument contains '-' and is followed by the first letter of one of 'the' keys,
+                # or if it contains '--' and is followed by the full key name
+                if (x=="-" + slot[0]) or (x=="--" + slot): 
+                    # Flip string version of booleans
+                    if v.lower() == 'false':
+                        v = 'true'
+                    elif v.lower() == 'true':
+                        v = 'false'
+                    # If not a boolean then just grab string
                     else:
-                        v = args[-1]
-            #override value of the[slot] from args, but doesn't seem can handle multiple args
+                        v = args[i+1]
+            # Pass the argument to the coerce function to be processed
             self.the[slot] = self.coerce(v)
+        # If the help mapping is true then print the help statement
         if self.the['help']:
             print("\n" + help + "\n")
+        # Return the updated 'the'
         return self.the
+
+if __name__ == "__main__":
+    c = config(help)
+
+    c.cli(sys.argv[1:])
