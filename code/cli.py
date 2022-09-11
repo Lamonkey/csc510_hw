@@ -74,8 +74,3 @@ class config:
             print("\n" + help + "\n")
         # Return the updated 'the'
         return self.the
-
-if __name__ == "__main__":
-    c = config(help)
-
-    c.cli(sys.argv[1:])
