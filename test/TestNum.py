@@ -101,7 +101,7 @@ def test_div_min():
 
 def test_mid_long_odd():
     num_module = Num(None,None)
-    datas = [1,2,3,4,5,6,8,9,10]
+    datas = [1,2,3,4,5,6,7,8,9]
     for data in datas:
         num_module.add(data)
     return num_module.mid() == 5
