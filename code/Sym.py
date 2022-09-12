@@ -12,9 +12,10 @@ class Sym:
         if v != '?':
             self.n += 1
             self.data[v] = self.data.setdefault(v, 0) + 1 #https://docs.python.org/3/library/stdtypes.html#dict.setdefault
-            
+    #return None if data is empty
     def mid(self): #TODO does col, most, or mode need to be a parameter?
         most = -1
+        mode = None
         for k,v in self.data.items():
             if v > most:
                 mode, most = k, v
