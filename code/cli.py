@@ -8,14 +8,14 @@ USAGE: lua seen.lua [OPTIONS]
 OPTIONS:
  -e --eg start-up example = nothing
  -d --dump on test failure, exit with stack dump = false
- -f --file file with csv data = ../data/auto93.csv
+ -f --file file with csv data = data/auto93.csv
  -h --help show help = false
  -n --nums number of nums to keep = 512
  -s --seed random number seed = 10019
  -S --seperator feild seperator = ,'''
 
-class config:
-    def __init__(self, help):
+class Config:
+    def __init__(self):
         self.the = {}  # Initialize 'the' to map command line arguments to their associated value
         # For each line in the given help statement, build a new mapping in 'the'
         for k, x in re.findall('\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):
@@ -46,6 +46,7 @@ class config:
             return fun(re.match("^\s*(.*?)\s*$", s).groups()[0])
 
     def cli(self, args):
+
         '''
         This function processes the command line arguments and updates the mappings in 'the'
 
@@ -73,4 +74,8 @@ class config:
         if self.the['help']:
             print("\n" + help + "\n")
         # Return the updated 'the'
+
+        return self.the
+
+    def the(self):
         return self.the
