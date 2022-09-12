@@ -1,5 +1,7 @@
+import sys
+sys.path.append("code")
 import random as rn
-from code.Utility import *
+from Utility import *
 
 class Num:
     def __init__(self, column_at, given_name):
