@@ -99,12 +99,19 @@ def test_div_min():
     num_module.add(1)
     return num_module.div() == 0
 
-def test_mid_long():
+def test_mid_long_odd():
     num_module = Num(None,None)
     datas = [1,2,3,4,5,6,8,9,10]
     for data in datas:
         num_module.add(data)
-    return num_module.mid() == 4.5
+    return num_module.mid() == 5
+
+def test_mid_long_even():
+    num_module = Num(None,None)
+    datas = [1,2,3,4,5,6,7,8]
+    for data in datas:
+        num_module.add(data)
+    return num_module.mid() == 5
 
 def test_mid_single():
     num_module = Num(None,None)
@@ -127,7 +134,7 @@ def test_mid_empty():
 
 
 
-tests = [test_const_with_none,test_const_with_not_none,test_sort,test_sort_on_empty,test_reset_sort,test_add_no_replace,test_div,test_div_empty,test_div_min,test_mid_long]
+tests = [test_const_with_none,test_const_with_not_none,test_sort,test_sort_on_empty,test_reset_sort,test_add_no_replace,test_div,test_div_empty,test_div_min,test_mid_long_odd,test_mid_long_even,test_mid_single,test_mid_empty]
 
 #for development testing 
 # for test_case in tests:
