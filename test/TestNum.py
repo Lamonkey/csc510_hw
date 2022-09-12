@@ -111,7 +111,7 @@ def test_mid_long_even():
     datas = [1,2,3,4,5,6,7,8]
     for data in datas:
         num_module.add(data)
-    return num_module.mid() == 5
+    return num_module.mid() == 4
 
 def test_mid_single():
     num_module = Num(None,None)
