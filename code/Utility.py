@@ -3,10 +3,10 @@ import re
 
 # class Utility:
     
-def per(t, p):
+def per(t, p=0.5):
     '''return p-th thing from sorted list t'''
-    p = math.floor(((p if p else 0.5) * len(t)) + 0.5)
-    return t[max(1, min(len(t), p))]
+    p = math.floor((p * len(t)) + 0.5)
+    return t[max(1, min(len(t), p)) - 1]
 
 #TODO o and oo may not be properly implemented. Not sure how to address sorting with lua tables vs python dicts
 def o(t):
