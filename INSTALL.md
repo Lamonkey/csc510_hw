@@ -32,9 +32,13 @@ deactivate
 To install as a developer, with the virtualenv active as described above, run:
 ```
 pip install -r requirements.txt
+pip install -e .
 ```
+(`-e` is the short version of `--editable`.)
 
-Further instructions will be added when entry point is made available.
+The "editable" flag makes pip install the package as symlinks pointing to the source code tree. As a result, edits to the source code affect the installed version of the package, with no need to reinstall in order to pick up changes. 
+
+Further instructions will be added when entry points are made active.
 
 ### Other notes
 Wording based off of Github user joshuam1008 private project. Contact for more details.
