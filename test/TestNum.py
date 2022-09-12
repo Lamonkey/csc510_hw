@@ -126,11 +126,12 @@ def test_mid_empty():
 
 
 
+
 tests = [test_const_with_none,test_const_with_not_none,test_sort,test_sort_on_empty,test_reset_sort,test_add_no_replace,test_div,test_div_empty,test_div_min,test_mid_long]
 
 #for development testing 
-for test_case in tests:
-    try:
-        print(f"{test_case.__name__} {'pass' if test_case() else 'failed'}")
-    except:
-         print(f"{test_case.__name__} ERROR!")
+# for test_case in tests:
+#     try:
+#         print(f"{test_case.__name__} {'pass' if test_case() else 'failed'}")
+#     except:
+#          print(f"{test_case.__name__} ERROR!")
