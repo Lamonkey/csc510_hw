@@ -1,4 +1,6 @@
 from code.Cols import Cols
+import os.path
+
 class Data:
     def __init__(self, source):
         self.cols = None
@@ -23,4 +25,5 @@ class Data:
                 #close the file
                 csv_file.close()
             except FileNotFoundError:
-                print("File does not exist")
+                print("File", source, "does not exist")
+                
