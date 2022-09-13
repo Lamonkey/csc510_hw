@@ -31,6 +31,11 @@ class Data:
                 print("File", source, "does not exist")
                 
     def add(self, xs):
+        '''
+        Add a new row to the data
+         - xs: The new "row" to be added to data
+        Returns: None
+        '''
         # If this is the first row added then initialize cols
         if self.cols == None:
             self.cols = Cols(xs)
