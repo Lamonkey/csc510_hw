@@ -3,7 +3,7 @@ import sys
 import importlib
 sys.path.append('test')
 #get python file and remove .py
-test_files = [test_file[:-3] for test_file in os.listdir("./test") if (test_file != "SampleTestEngine.py" and test_file != "README.md") and '.py' in test_file]
+test_files = [test_file[:-3] for test_file in os.listdir("./test") if (test_file[0:4] == "Test")]
 
 for test_module in test_files:
     module = None
