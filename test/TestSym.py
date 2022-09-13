@@ -1,7 +1,5 @@
-#test case for Sym module
-import sys
-sys.path.append('code')
 
+import import_code
 from Sym import *
 #test constructor
 def test_const_with_none():
@@ -69,6 +67,6 @@ def test_mid_empty():
     return sym_module.mid() is None
 tests = [test_div_2,test_mid_empty,test_const_with_none,test_const_with_not_none,test_div_1,test_succes_add,test_mid_non_empty,test_fail_add]
 
-#for development testing  
+# for development testing  
 # for test_case in tests:
 #     print(f"{test_case.__name__} {'pass' if test_case() else 'failed'}")
