@@ -1,1 +1,3 @@
-I havne't add test cases to test engine yet. To run each test cases you can run the sampleTestEngine.py or uncomment the code at buttom of each test cases to see the result
+All test cases should follow the following format, indorder for auto import to work
+1.must have all testing function in a list call tests
+2.naming begin with cap letter Test
