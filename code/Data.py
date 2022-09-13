@@ -1,10 +1,11 @@
-from code.Cols import Cols
+from Cols import Cols
 import os.path
 
 class Data:
     def __init__(self, source):
         self.cols = None
         self.rows = []
+        self.error = False
         if (isinstance(source, str)):
             try:
                 #open a csv file
@@ -25,5 +26,6 @@ class Data:
                 #close the file
                 csv_file.close()
             except FileNotFoundError:
+                self.error = True
                 print("File", source, "does not exist")
                 
