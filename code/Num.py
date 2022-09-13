@@ -48,5 +48,8 @@ class Num:
         return (per(a, 0.9) - per(a, 0.1))/2.58
     
     def mid(self):
+        #none if empty
+        if len(self.data) == 0:
+            return None
         return per(self.nums(), 0.5)
             
