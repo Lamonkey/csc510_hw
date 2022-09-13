@@ -1,7 +1,19 @@
-from code.Data import *
-from code.arithmetic import *
-from code.cli import *
-from code.Utility import oo
+#add code to search 
+from os.path import dirname
+absolute_path = dirname(__file__)
+code_path = "/code"
+test_path = "/test"
+code_full_path = dirname(absolute_path) + code_path
+test_full_path = dirname(absolute_path) + test_path
+import sys
+sys.path.append(code_full_path)
+sys.path.append(test_full_path)
+
+import importlib
+from Data import *
+from arithmetic import *
+from cli import *
+from Utility import oo
 import sys
 
 def run_test(name, given_the):
@@ -89,6 +101,25 @@ def run_test(name, given_the):
         return d.error == False
     tests["data"] = test_data
 
+    #auto adding all test cases 
+    test_files = [test_file[:-3] for test_file in os.listdir(test_full_path) if (test_file[0:4] == "Test" and '.py' in test_file)]
+    for test_module in test_files:
+        module = None
+        try:
+            module = importlib.import_module(test_module, package=None)
+        except:
+            print(f"error while importing {test_module} test module")
+        
+        #not running any test if there is error
+        if module == None:
+            continue
+        
+        #adding test cases to dict
+        test_cases = module.tests
+        print(f"{test_module}\n")
+        for test_case in test_cases:
+            tests[f"{test_module} {test_case.__name__}"] = test_case
     test_engine(name)
     #https://docs.python.org/2/library/sys.html
     sys.exit(num_fails)
+

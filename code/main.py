@@ -1,5 +1,5 @@
 import sys
-from code.cli import Config
+from cli import Config
 from test.test_csv import *
 
 # Parse Command Line, Populate "the" Configuration Object

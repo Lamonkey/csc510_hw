@@ -1,5 +1,3 @@
-import sys
-sys.path.append("code")
 import random as rn
 from Utility import *
 
