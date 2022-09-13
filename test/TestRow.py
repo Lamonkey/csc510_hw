@@ -1,5 +1,6 @@
+from tabnanny import check
 import import_code
-import Row
+from Row import *
 #check copy by value
 def check_copy_by_value():
     test_list = [1,2,3,4,5]
