@@ -59,14 +59,14 @@ class Config:
             for i, x in enumerate(args): # For each argument given
                 # If the argument contains '-' and is followed by the first letter of one of 'the' keys,
                 # or if it contains '--' and is followed by the full key name
-                if (x=="-" + slot[0]) or (x=="--" + slot): 
+                if (x=="-" + ('S' if slot == 'seperator' else slot[0])) or (x=="--" + slot): 
                     # Flip string version of booleans
                     if v.lower() == 'false':
                         v = 'true'
                     elif v.lower() == 'true':
                         v = 'false'
                     # If not a boolean then just grab string
-                    else:
+                    elif i+1 < len(args):
                         v = args[i+1]
             # Pass the argument to the coerce function to be processed
             self.the[slot] = self.coerce(v)
