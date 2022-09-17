@@ -1,4 +1,4 @@
-from code.Cols import Cols
+from Cols import Cols
 import os.path
 
 class Data:

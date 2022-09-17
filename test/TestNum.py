@@ -1,6 +1,4 @@
-import sys
-
-sys.path.append('code')
+import import_code
 from Num import *
 
 
@@ -65,21 +63,20 @@ def test_add_no_replace():
     return True
 
 # #basically use 2 sample t test to determin if both data comming from same population
-# def test_add_with_replacement():
-#     from scipy import stats
-#     import numpy as np
-#     num_module = Num(None,None)
-#     #create random population
-#     random_population = np.random.normal(0, 250, 500)
+import random
+def test_add_with_replacement():
+    population = [x for x in range(1001)]
+    #shuffle to randomize 
+    random.shuffle(population)
 
-#    # random_population = stats.norm.rvs(loc=5, scale=10, size=500, random_state='int')
-#     #add rvs1 to num_module
-#     for random_num in random_population:
-#         num_module.add(random_num)
-#     #run t test 
-#     p_value = stats.ttest_ind(num_module.data, random_population).pvalue
-#     #1 means identical
-#     return p_value > 0.85
+    num_module = Num(None,None)
+    num_module.capacity = 32
+    for random_num in population:
+        num_module.add(random_num)
+    
+    print(num_module.nums())
+    return len(num_module.nums()) == 32
+    
 
 def test_div():
     num_module = Num(None,None)
@@ -99,12 +96,19 @@ def test_div_min():
     num_module.add(1)
     return num_module.div() == 0
 
-def test_mid_long():
+def test_mid_long_odd():
     num_module = Num(None,None)
-    datas = [1,2,3,4,5,6,8,9,10]
+    datas = [1,2,3,4,5,6,7,8,9]
     for data in datas:
         num_module.add(data)
-    return num_module.mid() == 4.5
+    return num_module.mid() == 5
+
+def test_mid_long_even():
+    num_module = Num(None,None)
+    datas = [1,2,3,4,5,6,7,8]
+    for data in datas:
+        num_module.add(data)
+    return num_module.mid() == 4
 
 def test_mid_single():
     num_module = Num(None,None)
@@ -127,7 +131,7 @@ def test_mid_empty():
 
 
 
-tests = [test_const_with_none,test_const_with_not_none,test_sort,test_sort_on_empty,test_reset_sort,test_add_no_replace,test_div,test_div_empty,test_div_min,test_mid_long]
+tests = [test_const_with_none,test_const_with_not_none,test_sort,test_sort_on_empty,test_reset_sort,test_add_no_replace,test_div,test_div_empty,test_div_min,test_mid_long_odd,test_mid_long_even,test_mid_single,test_mid_empty,test_add_with_replacement]
 
 #for development testing 
 # for test_case in tests:
