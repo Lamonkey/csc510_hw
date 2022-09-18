@@ -3,7 +3,7 @@ from Utility import *
 
 class Num:
     def __init__(self, column_at, given_name):
-        self.capacity = 100
+        self.capacity = globals()['the']['nums'] if ('the' in globals() and 'nums' in globals()['the']) else 512
         #number of variable have seen
         self.n = 0
         self.low = float('inf')
@@ -21,7 +21,7 @@ class Num:
         return self.data
     
     #I don't think add should have the parameter, I feel it is a bad structure.
-    def add(self, v, the=None): #TODO should 'the' be a parameter? or a global var somewhere?
+    def add(self, v): #TODO should 'the' be a parameter? or a global var somewhere?
         #TODO maybe need to initialize pos
         if v != '?':
             pos = None
