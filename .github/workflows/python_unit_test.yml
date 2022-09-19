@@ -36,7 +36,7 @@ jobs:
     - name: Test with custom test engine through coverage.py
       run: |
         python3 -m coverage run --source=code -m code.main -e ALL
-    - id: coverage_report
+    - id: Get_Coverage_Report
       run: |
         codecov=$(python3 -m coverage report -m)
         echo "$codecov"
@@ -45,22 +45,11 @@ jobs:
         then
           echo "##[set-output name=total_coverage;]${BASH_REMATCH[1]}%"
         fi
-    - name: Get Coverage Report
+    - name: Get Badge for Coverage Report 
       uses: RubbaBoy/BYOB@v1.3.0
       with:
         NAME: coverage_report
         LABEL: 'Updated at'
-        STATUS: ${{ steps.coverage_report.outputs.total_coverage }}
+        STATUS: ${{ steps.Get_Coverage_Report.outputs.total_coverage }}
         COLOR: 00EEFF
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - id: date
-      run: echo "##[set-output name=data;]$(date)"
-    - name: Time badge
-      uses: RubbaBoy/BYOB@v1.3.0
-      with:
-        NAME: time
-        LABEL: 'Updated at'
-        STATUS: ${{ steps.date.outputs.data }}
-        COLOR: 00EEFF
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
