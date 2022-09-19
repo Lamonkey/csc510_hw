@@ -53,5 +53,5 @@ jobs:
         LABEL: 'Updated at'
         STATUS: ${{ steps.coverage_report.outputs.total_coverage }}
         COLOR: 00EEFF
-        GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
         
