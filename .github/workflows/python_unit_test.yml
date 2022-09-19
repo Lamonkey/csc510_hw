@@ -54,7 +54,6 @@ jobs:
         STATUS: ${{ steps.coverage_report.outputs.total_coverage }}
         COLOR: 00EEFF
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
-    - name: Badge_Job
     - id: date
       run: echo "##[set-output name=data;]$(date)"
     - name: Time badge
