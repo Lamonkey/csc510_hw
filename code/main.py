@@ -9,11 +9,11 @@ test_full_path = dirname(absolute_path) + test_path
 sys.path.append(code_full_path)
 sys.path.append(test_full_path)
 from cli import Config
-from test_csv import *
+from test.test_csv import *
 
 # Parse Command Line, Populate "the" Configuration Object
 c = Config()
-the = c.cli(sys.argv[1:])
+the = globals()['the'] = c.cli(sys.argv[1:])
 
 if the["eg"] != "nothing":
     #run some test

@@ -1,12 +1,11 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# This workflow will install Python dependencies, run tests, display coverage, and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: unit test
+name: unit test & coverage
 
 on: [push, pull_request]
 
-permissions:
-  contents: read
+
 
 jobs:
   build:
@@ -34,6 +33,23 @@ jobs:
       run: | 
         python3 -m venv venv
         source venv/bin/activate
-    - name: Test with custom test engine
+    - name: Test with custom test engine through coverage.py
       run: |
-        python3 -m code.main -e ALL
+        python3 -m coverage run --source=code -m code.main -e ALL
+    - id: Get_Coverage_Report
+      run: |
+        codecov=$(python3 -m coverage report -m)
+        echo "$codecov"
+        regex="TOTAL.+[ ]([0-9]?[0-9]?[0-9])%"
+        if  [[ $codecov =~ $regex ]]
+        then
+          echo "##[set-output name=total_coverage;]${BASH_REMATCH[1]}%"
+        fi
+    - name: Get Badge for Coverage Report 
+      uses: RubbaBoy/BYOB@v1.3.0
+      with:
+        NAME: coverage_report
+        LABEL: 'Total Coverage'
+        STATUS: ${{ steps.Get_Coverage_Report.outputs.total_coverage }}
+        COLOR: 00EEFF
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
