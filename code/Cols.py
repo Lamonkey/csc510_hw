@@ -2,6 +2,9 @@ from Num import Num
 from Sym import Sym
 
 class Cols:
+    """
+    A summary of all columns. Iterates through the names of the columns on construction, instantiating
+    the appropriate objects and storing references to them."""
     def __init__(self, names):
         self.names = names
         self.columns = []

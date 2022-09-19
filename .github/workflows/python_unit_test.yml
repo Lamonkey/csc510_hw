@@ -45,6 +45,18 @@ jobs:
         then
           echo "##[set-output name=total_coverage;]${BASH_REMATCH[1]}%"
         fi
+    - name: Generate Documentation
+      run: |
+        pdoc --html code
+        echo ${{ github.ref }}
+        git add .
+        git config --local user.name "auto-generate doc"
+        git commit -m "CI: Automated build push" -a
+    - name: Push Documentation
+      if: github.ref == 'refs/heads/master'
+      uses: ad-m/github-push-action@master
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Get Badge for Coverage Report 
       uses: RubbaBoy/BYOB@v1.3.0
       with:
