@@ -57,7 +57,6 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: 
     - name: Get Badge for Coverage Report 
       uses: RubbaBoy/BYOB@v1.3.0
       with:
