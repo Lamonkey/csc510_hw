@@ -47,7 +47,7 @@ jobs:
         fi
     - name: Generate Documentation
       run: |
-        pdoc --html --output-dir documentation code
+        pdoc --html code
     - name: Get Badge for Coverage Report 
       uses: RubbaBoy/BYOB@v1.3.0
       with:
