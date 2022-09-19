@@ -53,7 +53,7 @@ jobs:
         LABEL: 'Updated at'
         STATUS: ${{ steps.coverage_report.outputs.total_coverage }}
         COLOR: 00EEFF
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - id: date
       run: echo "##[set-output name=data;]$(date)"
     - name: Time badge
@@ -63,5 +63,5 @@ jobs:
         LABEL: 'Updated at'
         STATUS: ${{ steps.date.outputs.data }}
         COLOR: 00EEFF
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
