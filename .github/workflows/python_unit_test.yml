@@ -45,6 +45,9 @@ jobs:
         then
           echo "##[set-output name=total_coverage;]${BASH_REMATCH[1]}%"
         fi
+    - name: Generate Documentation
+      run: |
+        pdoc --html --output-dir documentation code
     - name: Get Badge for Coverage Report 
       uses: RubbaBoy/BYOB@v1.3.0
       with:
