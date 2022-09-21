@@ -1,6 +1,8 @@
 import math
 
 class Sym:
+    """Representation of a Symbol column. Contains a column_at column, a counter (n), and a given name.
+    Defines interface for adding symbols, and mid and div functions for summaries of the data."""
     def __init__(self, column_at, given_name):
         self.n = 0
         self.col_at = column_at if column_at != None else 0
