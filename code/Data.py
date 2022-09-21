@@ -16,13 +16,17 @@ class Data:
                 csv_text = csv_file.read()
 
                 #split the csv file into rows
-                self.rows = csv_text.split("\n")
+                rows_text = csv_text.split("\n")
 
                 #get the column names
-                cols_names= self.rows[0].split(",")
+                cols_names= rows_text[0].split(",")
 
                 #construct new cols summary
                 self.cols = Cols(cols_names)
+
+                #add the rows
+                for r in range(1, len(rows_text)):
+                    self.add(rows_text[r].split(","))
 
                 #close the file
                 csv_file.close()
@@ -31,6 +35,7 @@ class Data:
                 print("File", source, "does not exist")
                 
     def add(self, xs):
+        
         '''
         Add a new row to the data
          - xs: The new "row" to be added to data
