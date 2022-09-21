@@ -29,6 +29,8 @@
 <pre><code class="python">import math
 
 class Sym:
+    &#34;&#34;&#34;Representation of a Symbol column. Contains a column_at column, a counter (n), and a given name.
+    Defines interface for adding symbols, and mid and div functions for summaries of the data.&#34;&#34;&#34;
     def __init__(self, column_at, given_name):
         self.n = 0
         self.col_at = column_at if column_at != None else 0
@@ -72,12 +74,15 @@ class Sym:
 <span>(</span><span>column_at, given_name)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Representation of a Symbol column. Contains a column_at column, a counter (n), and a given name.
+Defines interface for adding symbols, and mid and div functions for summaries of the data.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Sym:
+    &#34;&#34;&#34;Representation of a Symbol column. Contains a column_at column, a counter (n), and a given name.
+    Defines interface for adding symbols, and mid and div functions for summaries of the data.&#34;&#34;&#34;
     def __init__(self, column_at, given_name):
         self.n = 0
         self.col_at = column_at if column_at != None else 0
