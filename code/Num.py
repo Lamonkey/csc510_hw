@@ -20,8 +20,9 @@ class Num:
             self.is_sorted = True
         return self.data
     
-    #I don't think add should have the parameter, I feel it is a bad structure.
-    def add(self, v): #TODO should 'the' be a parameter? or a global var somewhere?
+    def add(self, v):
+        #convert v to float
+        v=float(v)
         #TODO maybe need to initialize pos
         if v != '?':
             pos = None

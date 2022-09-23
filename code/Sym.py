@@ -28,5 +28,6 @@ class Sym:
         def fun(p):
             return p*math.log(p,2)
         for _,n in self.data.items():
-            e = e - fun(n/self.n)
+            if(n > 0):
+                e = e - fun(n/self.n)
         return e
