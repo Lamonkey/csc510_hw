@@ -48,8 +48,9 @@ class Num:
             self.is_sorted = True
         return self.data
     
-    #I don&#39;t think add should have the parameter, I feel it is a bad structure.
-    def add(self, v): #TODO should &#39;the&#39; be a parameter? or a global var somewhere?
+    def add(self, v):
+        #convert v to float
+        v=float(v)
         #TODO maybe need to initialize pos
         if v != &#39;?&#39;:
             pos = None
@@ -121,8 +122,9 @@ class Num:
             self.is_sorted = True
         return self.data
     
-    #I don&#39;t think add should have the parameter, I feel it is a bad structure.
-    def add(self, v): #TODO should &#39;the&#39; be a parameter? or a global var somewhere?
+    def add(self, v):
+        #convert v to float
+        v=float(v)
         #TODO maybe need to initialize pos
         if v != &#39;?&#39;:
             pos = None
@@ -165,7 +167,9 @@ class Num:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def add(self, v): #TODO should &#39;the&#39; be a parameter? or a global var somewhere?
+<pre><code class="python">def add(self, v):
+    #convert v to float
+    v=float(v)
     #TODO maybe need to initialize pos
     if v != &#39;?&#39;:
         pos = None

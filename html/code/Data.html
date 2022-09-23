@@ -26,7 +26,8 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">from Cols import Cols
+<pre><code class="python">from code.Cols import Cols
+from code.Row import Row
 import os.path
 
 class Data:
@@ -43,20 +44,77 @@ class Data:
                 csv_text = csv_file.read()
 
                 #split the csv file into rows
-                self.rows = csv_text.split(&#34;\n&#34;)
+                rows_text = csv_text.split(&#34;\n&#34;)
 
                 #get the column names
-                cols_names= self.rows[0].split(&#34;,&#34;)
+                cols_names= rows_text[0].split(&#34;,&#34;)
 
                 #construct new cols summary
                 self.cols = Cols(cols_names)
+
+                #add the rows
+                for r in range(1, len(rows_text)):
+                    self.add(rows_text[r].split(&#34;,&#34;))
 
                 #close the file
                 csv_file.close()
             except FileNotFoundError:
                 self.error = True
                 print(&#34;File&#34;, source, &#34;does not exist&#34;)
-                </code></pre>
+                
+    def add(self, xs):
+        
+        &#39;&#39;&#39;
+        Add a new row to the data
+         - xs: The new &#34;row&#34; to be added to data
+        Returns: None
+        &#39;&#39;&#39;
+        # If this is the first row added then initialize cols
+        if self.cols == None:
+            self.cols = Cols(xs)
+        else:
+            # Initialize row variable to be none
+            row = None
+            try:
+                # If xs is a Row object then append it to self.rows and set row equal to it
+                xs.cells
+                self.rows.append(xs)
+                row = xs
+            except:
+                # If xs is not a Row object then initialize a new Row object and set row equal to it
+                self.rows.append(Row(xs))
+                row = Row(xs)
+            # For each x column
+            for col in self.cols.x_columns:
+                col.add(row.cells[col.col_at])
+            # For each y column
+            for col in self.cols.y_columns:
+                col.add(row.cells[col.col_at])
+
+    def stats(self, places=2, showCols=None, fun=None):
+        &#39;&#39;&#39;
+        Retrives the stats of specified columns based on a given function
+         - places: The number of places to round a numerical answer to
+         - showCols: The columns to retrieve the stats for
+         - fun: The function (either mid or div) to use when getting stats
+        Retrurns: A dictionary mapping the column name to the stats output
+        &#39;&#39;&#39;
+        # If showCols was not passed as a parameter then initialize it to the y columns
+        showCols = self.cols.y_columns if showCols == None else showCols
+        # If a function string name was not given then default it to mid
+        fun = &#39;mid&#39; if fun == None else fun
+        # Initialize the dictionary mapping column name to stats output
+        t = {}
+        # For each column we want stats of
+        for col in showCols:
+            # Get the output of the function based on the parameter fun
+            v = col.mid() if fun == &#39;mid&#39; else col.div()
+            try: # If v is a numerical answer then we can round it to the number of places
+                v = round(v, places)
+            except: # Otherwise do nothing
+                v = v
+            t[col.name] = v # Create the mapping
+        return t</code></pre>
 </details>
 </section>
 <section>
@@ -92,20 +150,161 @@ class Data:
                 csv_text = csv_file.read()
 
                 #split the csv file into rows
-                self.rows = csv_text.split(&#34;\n&#34;)
+                rows_text = csv_text.split(&#34;\n&#34;)
 
                 #get the column names
-                cols_names= self.rows[0].split(&#34;,&#34;)
+                cols_names= rows_text[0].split(&#34;,&#34;)
 
                 #construct new cols summary
                 self.cols = Cols(cols_names)
+
+                #add the rows
+                for r in range(1, len(rows_text)):
+                    self.add(rows_text[r].split(&#34;,&#34;))
 
                 #close the file
                 csv_file.close()
             except FileNotFoundError:
                 self.error = True
-                print(&#34;File&#34;, source, &#34;does not exist&#34;)</code></pre>
+                print(&#34;File&#34;, source, &#34;does not exist&#34;)
+                
+    def add(self, xs):
+        
+        &#39;&#39;&#39;
+        Add a new row to the data
+         - xs: The new &#34;row&#34; to be added to data
+        Returns: None
+        &#39;&#39;&#39;
+        # If this is the first row added then initialize cols
+        if self.cols == None:
+            self.cols = Cols(xs)
+        else:
+            # Initialize row variable to be none
+            row = None
+            try:
+                # If xs is a Row object then append it to self.rows and set row equal to it
+                xs.cells
+                self.rows.append(xs)
+                row = xs
+            except:
+                # If xs is not a Row object then initialize a new Row object and set row equal to it
+                self.rows.append(Row(xs))
+                row = Row(xs)
+            # For each x column
+            for col in self.cols.x_columns:
+                col.add(row.cells[col.col_at])
+            # For each y column
+            for col in self.cols.y_columns:
+                col.add(row.cells[col.col_at])
+
+    def stats(self, places=2, showCols=None, fun=None):
+        &#39;&#39;&#39;
+        Retrives the stats of specified columns based on a given function
+         - places: The number of places to round a numerical answer to
+         - showCols: The columns to retrieve the stats for
+         - fun: The function (either mid or div) to use when getting stats
+        Retrurns: A dictionary mapping the column name to the stats output
+        &#39;&#39;&#39;
+        # If showCols was not passed as a parameter then initialize it to the y columns
+        showCols = self.cols.y_columns if showCols == None else showCols
+        # If a function string name was not given then default it to mid
+        fun = &#39;mid&#39; if fun == None else fun
+        # Initialize the dictionary mapping column name to stats output
+        t = {}
+        # For each column we want stats of
+        for col in showCols:
+            # Get the output of the function based on the parameter fun
+            v = col.mid() if fun == &#39;mid&#39; else col.div()
+            try: # If v is a numerical answer then we can round it to the number of places
+                v = round(v, places)
+            except: # Otherwise do nothing
+                v = v
+            t[col.name] = v # Create the mapping
+        return t</code></pre>
 </details>
+<h3>Methods</h3>
+<dl>
+<dt id="code.Data.Data.add"><code class="name flex">
+<span>def <span class="ident">add</span></span>(<span>self, xs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a new row to the data
+- xs: The new "row" to be added to data
+Returns: None</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add(self, xs):
+    
+    &#39;&#39;&#39;
+    Add a new row to the data
+     - xs: The new &#34;row&#34; to be added to data
+    Returns: None
+    &#39;&#39;&#39;
+    # If this is the first row added then initialize cols
+    if self.cols == None:
+        self.cols = Cols(xs)
+    else:
+        # Initialize row variable to be none
+        row = None
+        try:
+            # If xs is a Row object then append it to self.rows and set row equal to it
+            xs.cells
+            self.rows.append(xs)
+            row = xs
+        except:
+            # If xs is not a Row object then initialize a new Row object and set row equal to it
+            self.rows.append(Row(xs))
+            row = Row(xs)
+        # For each x column
+        for col in self.cols.x_columns:
+            col.add(row.cells[col.col_at])
+        # For each y column
+        for col in self.cols.y_columns:
+            col.add(row.cells[col.col_at])</code></pre>
+</details>
+</dd>
+<dt id="code.Data.Data.stats"><code class="name flex">
+<span>def <span class="ident">stats</span></span>(<span>self, places=2, showCols=None, fun=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Retrives the stats of specified columns based on a given function
+- places: The number of places to round a numerical answer to
+- showCols: The columns to retrieve the stats for
+- fun: The function (either mid or div) to use when getting stats
+Retrurns: A dictionary mapping the column name to the stats output</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stats(self, places=2, showCols=None, fun=None):
+    &#39;&#39;&#39;
+    Retrives the stats of specified columns based on a given function
+     - places: The number of places to round a numerical answer to
+     - showCols: The columns to retrieve the stats for
+     - fun: The function (either mid or div) to use when getting stats
+    Retrurns: A dictionary mapping the column name to the stats output
+    &#39;&#39;&#39;
+    # If showCols was not passed as a parameter then initialize it to the y columns
+    showCols = self.cols.y_columns if showCols == None else showCols
+    # If a function string name was not given then default it to mid
+    fun = &#39;mid&#39; if fun == None else fun
+    # Initialize the dictionary mapping column name to stats output
+    t = {}
+    # For each column we want stats of
+    for col in showCols:
+        # Get the output of the function based on the parameter fun
+        v = col.mid() if fun == &#39;mid&#39; else col.div()
+        try: # If v is a numerical answer then we can round it to the number of places
+            v = round(v, places)
+        except: # Otherwise do nothing
+            v = v
+        t[col.name] = v # Create the mapping
+    return t</code></pre>
+</details>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -125,6 +324,10 @@ class Data:
 <ul>
 <li>
 <h4><code><a title="code.Data.Data" href="#code.Data.Data">Data</a></code></h4>
+<ul class="">
+<li><code><a title="code.Data.Data.add" href="#code.Data.Data.add">add</a></code></li>
+<li><code><a title="code.Data.Data.stats" href="#code.Data.Data.stats">stats</a></code></li>
+</ul>
 </li>
 </ul>
 </li>

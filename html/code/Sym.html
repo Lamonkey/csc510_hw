@@ -56,7 +56,8 @@ class Sym:
         def fun(p):
             return p*math.log(p,2)
         for _,n in self.data.items():
-            e = e - fun(n/self.n)
+            if(n &gt; 0):
+                e = e - fun(n/self.n)
         return e</code></pre>
 </details>
 </section>
@@ -108,7 +109,8 @@ Defines interface for adding symbols, and mid and div functions for summaries of
         def fun(p):
             return p*math.log(p,2)
         for _,n in self.data.items():
-            e = e - fun(n/self.n)
+            if(n &gt; 0):
+                e = e - fun(n/self.n)
         return e</code></pre>
 </details>
 <h3>Methods</h3>
@@ -143,7 +145,8 @@ Defines interface for adding symbols, and mid and div functions for summaries of
     def fun(p):
         return p*math.log(p,2)
     for _,n in self.data.items():
-        e = e - fun(n/self.n)
+        if(n &gt; 0):
+            e = e - fun(n/self.n)
     return e</code></pre>
 </details>
 </dd>
