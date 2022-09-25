@@ -1,7 +1,7 @@
 # Repo: https://github.com/juliachiu1/csc510_g4_hw2345 
 
-|Notes|Score|evidence|
-|-----|---------|
+|Notes|score|evidence|
+|-----|-----|---------|
 |Video1| -score- | For people starting with 2020 or 2021 projects, 2min video of old functionality| 
 |Video2|For people starting with 2020 or 2021 projects, 2min video of new functionality, showing a significant delta from old. For everyone else, 2min video of all functionality.| 
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others... 
