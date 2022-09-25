@@ -51,7 +51,7 @@ jobs:
         echo ${{ github.ref }}
         git add .
         git config --local user.name "auto-generate doc"
-        git commit -m "CI: Automated build push" -a
+        git diff-index --quiet HEAD || git commit -m "CI: Automated build push" -a
     - name: Push Documentation
       if: github.ref == 'refs/heads/main'
       uses: ad-m/github-push-action@master
