@@ -30,6 +30,7 @@
 from Utility import *
 
 class Num:
+    &#34;&#34;&#34;A number column, containing a set of data as well as methods for summarizing it (div, mid)&#34;&#34;&#34;
     def __init__(self, column_at, given_name):
         self.capacity = globals()[&#39;the&#39;][&#39;nums&#39;] if (&#39;the&#39; in globals() and &#39;nums&#39; in globals()[&#39;the&#39;]) else 512
         #number of variable have seen
@@ -98,12 +99,13 @@ class Num:
 <span>(</span><span>column_at, given_name)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>A number column, containing a set of data as well as methods for summarizing it (div, mid)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Num:
+    &#34;&#34;&#34;A number column, containing a set of data as well as methods for summarizing it (div, mid)&#34;&#34;&#34;
     def __init__(self, column_at, given_name):
         self.capacity = globals()[&#39;the&#39;][&#39;nums&#39;] if (&#39;the&#39; in globals() and &#39;nums&#39; in globals()[&#39;the&#39;]) else 512
         #number of variable have seen
