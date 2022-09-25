@@ -2,6 +2,7 @@ import random as rn
 from Utility import *
 
 class Num:
+    """A number column, containing a set of data as well as methods for summarizing it (div, mid)"""
     def __init__(self, column_at, given_name):
         self.capacity = globals()['the']['nums'] if ('the' in globals() and 'nums' in globals()['the']) else 512
         #number of variable have seen
