@@ -1,6 +1,6 @@
 # Repo: https://github.com/juliachiu1/csc510_g4_hw2345 
 
-|Notes|evidence|
+|Notes|Score|evidence|
 |-----|---------|
 |Video1| -score- | For people starting with 2020 or 2021 projects, 2min video of old functionality| 
 |Video2|For people starting with 2020 or 2021 projects, 2min video of new functionality, showing a significant delta from old. For everyone else, 2min video of all functionality.| 
