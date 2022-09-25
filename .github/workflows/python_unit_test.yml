@@ -47,7 +47,7 @@ jobs:
         fi
     - name: Generate Documentation
       run: |
-        pdoc --html code --force --output-dir docs
+        pdoc --html code --force
         echo ${{ github.ref }}
         git add .
         git config --local user.name "auto-generate doc"
