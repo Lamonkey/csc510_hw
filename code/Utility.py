@@ -10,8 +10,10 @@ def per(t, p=0.5):
 
 #TODO o and oo may not be properly implemented. Not sure how to address sorting with lua tables vs python dicts
 def o(t):
-    if type(t) is not dict: #TODO is dict the table equivalent?
-        return str(t)
+    if type(t) is not dict: #TODO is dict the table equivalent?    
+        vars_t = vars(t)
+        vars_t['data'] = "Hidden..."    
+        return vars_t
     def show(k,v):
         if not re.find("^_", str(k)):
             v = o(v)

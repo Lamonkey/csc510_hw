@@ -22,4 +22,4 @@ will run all the test cases. If you run
 
 py -m code.main -e LIST
 
-you can see every current test case. To add a test case, go to the test_csv.py file and add a function that returns true on success and false on failure. Then, immediately after declaring the function, add an entry to the tests dictionary with a name that can be used to call your specific function from the command line. 
+you can see every current test case. To add a test case, go to the test_engine.py file and add a function that returns true on success and false on failure. Then, immediately after declaring the function, add an entry to the tests dictionary with a name that can be used to call your specific function from the command line. 
