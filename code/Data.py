@@ -3,6 +3,7 @@ from code.Row import Row
 import os.path
 
 class Data:
+    """Summary for a data sheet. Takes in a csv file and generates appropriate rows and columns."""
     def __init__(self, source):
         self.cols = None
         self.rows = []
