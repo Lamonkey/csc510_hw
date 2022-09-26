@@ -15,7 +15,9 @@ OPTIONS:
  -S --seperator feild seperator = ,'''
 
 class Config:
+    """Generates and stores mappings parsed from command line."""
     def __init__(self):
+        """Initialize mapping structure, parsing help structure."""
         self.the = {}  # Initialize 'the' to map command line arguments to their associated value
         # For each line in the given help statement, build a new mapping in 'the'
         for k, x in re.findall('\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)', help):

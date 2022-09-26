@@ -16,12 +16,14 @@ class Num:
         self.w = -1 if given_name != None and given_name[-1] == '-' else 1
         
     def nums(self):
+        """Returns a sorted copy of the data."""
         if not self.is_sorted:
             self.data.sort()
             self.is_sorted = True
         return self.data
     
     def add(self, v):
+        """Adds a 'row' of data to the Number object."""
         #convert v to float
         v=float(v)
         #TODO maybe need to initialize pos
@@ -44,12 +46,14 @@ class Num:
                 self.data[pos] = float(v) # TODO float or int?
     
     def div(self):
+        """Returns the standard deviation of the data."""
         if len(self.data) < 2:
             return None
         a = self.nums()
         return (per(a, 0.9) - per(a, 0.1))/2.58
     
     def mid(self):
+        """Returns the median of the data."""
         #none if empty
         if len(self.data) == 0:
             return None

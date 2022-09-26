@@ -16,6 +16,7 @@ class Sym:
             self.data[v] = self.data.setdefault(v, 0) + 1 #https://docs.python.org/3/library/stdtypes.html#dict.setdefault
     #return None if data is empty
     def mid(self): #TODO does col, most, or mode need to be a parameter?
+        """Returns the most common symbol."""
         most = -1
         mode = None
         for k,v in self.data.items():
@@ -24,6 +25,7 @@ class Sym:
         return mode
     
     def div(self): #TODO does e or fun need to be a parameter?
+        """Returns the entropy of the symbol column."""
         e = 0
         def fun(p):
             return p*math.log(p,2)

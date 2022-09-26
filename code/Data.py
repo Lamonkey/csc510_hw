@@ -36,7 +36,6 @@ class Data:
                 print("File", source, "does not exist")
                 
     def add(self, xs):
-        
         '''
         Add a new row to the data
          - xs: The new "row" to be added to data
