@@ -22,12 +22,12 @@
 |Use of syntax checkers. |-score- | config files iin  GH showing this checker's config  |
 |Use of code coverage |-score- | config files in GH|
 |Other automated analysis tools|-score- | config files in GH|
-|Test cases exist|-score- | dozens of tests and those test cases are more than 30% of the code base|
-|Test cases are routinely executed|-score- | E.g. travis-com.com or github actions or something|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|-score- | 
-|Issues are discussed before they are closed|-score- | even if you discuss in slack, need a sumamry statement here|
-|Chat channel: exists|-score- | Link or screenshots|
-|Test cases: a large proportion of the issues related to handling failing cases.|-score- | If a test case fails, open an issue and fix it|
+|Test cases exist| 1 | Test cases exist but no coverage is given https://github.com/juliachiu1/csc510_g4_hw2345/blob/main/code/Test.py|
+|Test cases are routinely executed| 3 | https://github.com/juliachiu1/csc510_g4_hw2345/blob/main/.github/workflows/test.yml|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 3 | https://github.com/juliachiu1/csc510_g4_hw2345/blob/main/CONTRIBUTING.md|
+|Issues are discussed before they are closed| 0 | No opened issues https://github.com/juliachiu1/csc510_g4_hw2345/issues?q=is%3Aissue+is%3Aclosed|
+|Chat channel: exists| 0 | Not relevant to the homeworks|
+|Test cases: a large proportion of the issues related to handling failing cases.| 0 | No issues are opened https://github.com/juliachiu1/csc510_g4_hw2345/issues?q=is%3Aissue+is%3Aclosed|
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 | all files appear to be accessible |
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 2 | There are no requirements so not a lot required to be the same. Python version not specifically specified. |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 | n/a for hw5 | 
