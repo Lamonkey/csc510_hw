@@ -1,5 +1,5 @@
 import random as rn
-from Utility import *
+from code.Utility import *
 
 class Num:
     """A number column, containing a set of data as well as methods for summarizing it (div, mid)"""
