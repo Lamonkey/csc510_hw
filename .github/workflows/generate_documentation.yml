@@ -40,9 +40,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Configure PYTHONPATH
         run: |
-          python3 -c "import importlib;
+          python3 -c "import importlib, sys;
           importlib.import_module('code');
-          importlib.import_module('test');"
+          importlib.import_module('test');
+          print(sys.path)"
       - name: Generate Documentation
         run: |
           pdoc --html code --force --output-dir docs
