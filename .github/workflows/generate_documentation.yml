@@ -41,6 +41,8 @@ jobs:
       - name: Configure PYTHONPATH
         run: |
           export PYTHONPATH="$PWD/code"
+          export PYTHONPATH="$PWD"
+          export PYTHONPATH="$PWD/test"
           python3 -c "import sys; print(sys.path)"
       - name: Generate Documentation
         run: |
