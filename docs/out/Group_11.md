@@ -21,7 +21,7 @@
 | Use of code formatters.                                      | 0     | no config file for this                                      |
 | Use of syntax checkers.                                      | 0     | no config file for this                                      |
 | Use of code coverage                                         | 3     | has a badge and link to the report                           |
-| Other automated analysis tools                               | 3     | gita action and codecov                                      |
+| Other automated analysis tools                               | 3     | git action and codecov                                      |
 | Test cases exist                                             | 3     | All test cases exist with 75% code coverage https://github.com/Surya-06/SE-Proj22-Team11/blob/main/Test/test_eg.py |
 | Test cases are routinely executed                            | 3     | https://github.com/Surya-06/SE-Proj22-Team11/blob/main/.github/workflows/build-test.yaml |
 | The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up | 2     | File is not very informative https://github.com/Surya-06/SE-Proj22-Team11/blob/main/contributing.md |
