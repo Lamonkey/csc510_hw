@@ -12,7 +12,7 @@
 |DOI badge: exists| 3 | Exists: https://zenodo.org/badge/latestdoi/531687580|
 |Docs: doco generated, format not ugly | 0 | No generated docs |
 |Docs: what: point descriptions of each class/function (in isolation) | 0 |  No what documentation
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 1 |N[o how documentation](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/INSTALL.md)|
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 1 |No how documentationhttps://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/INSTALL.md|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 0 | no video present
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 1 | Install.md and how documentation barebones:  https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/INSTALL.md|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 0 | no why documentation 
