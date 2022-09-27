@@ -40,15 +40,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Configure PYTHONPATH
         run: |
-          python3 -c "import sys;
-          from os.path import dirname;
-          absolute_path = sys.path;
-          code_path = '"/code"';
-          test_path = '"/test"';
-          code_full_path = dirname(absolute_path) + code_path;
-          test_full_path = dirname(absolute_path) + test_path;
-          sys.path.append(code_full_path);
-          sys.path.append(test_full_path);
+          python3 -c "import sys, os;
+          sys.path.append(os.path.join(sys.path[0],'code','test',''))
           print(sys.path)"
       - name: Generate Documentation
         run: |
