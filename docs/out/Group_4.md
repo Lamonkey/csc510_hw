@@ -13,7 +13,7 @@
 |DOI badge: exists| 3 | Exists: https://zenodo.org/badge/latestdoi/532101884|
 |Docs: doco generated, format not ugly | 0 | No generated docs |
 |Docs: what: point descriptions of each class/function (in isolation) |0| no what documentation 
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 0 | no how documentation|
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 1 | brief install instructions: https://github.com/juliachiu1/csc510_g4_hw2345#readme and contributing instructions: https://github.com/juliachiu1/csc510_g4_hw2345/blob/main/CONTRIBUTING.md |
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 1 | barebones readme why documentation
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 0 | no video present
 |Use of version control tools|-score- | 
