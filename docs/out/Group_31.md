@@ -21,12 +21,12 @@
 |Use of syntax checkers. |-score- | config files iin  GH showing this checker's config  |
 |Use of code coverage |-score- | config files in GH|
 |Other automated analysis tools|-score- | config files in GH|
-|Test cases exist|-score- | dozens of tests and those test cases are more than 30% of the code base|
-|Test cases are routinely executed|-score- | E.g. travis-com.com or github actions or something|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|-score- | 
-|Issues are discussed before they are closed|-score- | even if you discuss in slack, need a sumamry statement here|
-|Chat channel: exists|-score- | Link or screenshots|
-|Test cases: a large proportion of the issues related to handling failing cases.|-score- | If a test case fails, open an issue and fix it|
+|Test cases exist| 2 | Includes tests with proper coverage but in wrong directory https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/blob/main/src/example.py|
+|Test cases are routinely executed| 3 | https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/blob/main/.github/workflows/csv-test.yml|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 0 | There is no CONTRIBUTING.md file in root directory|
+|Issues are discussed before they are closed| 3 | https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/issues?q=is%3Aissue+is%3Aclosed|
+|Chat channel: exists| 0 | Not relevant for homeworks|
+|Test cases: a large proportion of the issues related to handling failing cases.| 1 | No failing test cases were opened in issues https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/issues?q=is%3Aissue+is%3Aclosed|
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 | all tools and files accessible |
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 3 | vscode and config files are in repo, python3 is specified |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 | n/a for hw5 |
