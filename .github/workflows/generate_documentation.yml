@@ -40,6 +40,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Configure PYTHONPATH
         run: |
+          pwd
           python3 -c "import importlib, sys;
           importlib.import_module('code');
           importlib.import_module('test');
