@@ -9,12 +9,12 @@
 | Number of commits: by different people                                                                     | 3         | https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/graphs/contributors |
 | Issues reports: there are **many**                                                                             | 2         | There are only 7 issues: https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/issues              |
 |Issues are being closed| 3 | All Issues Closed: https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/issues?q=is%3Aissue+is%3Aclosed |
-|DOI badge: exists|-score- | in GH|
-|Docs: doco generated, format not ugly |-score- | in GH|
-|Docs: what: point descriptions of each class/function (in isolation) |-score- | 
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|-score- | doc page entries|
-|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|-score- | 
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|-score- | 
+|DOI badge: exists| 3 | Exists: https://zenodo.org/badge/latestdoi/530464314|
+|Docs: doco generated, format not ugly | 0 | Couldn't find any generated docs (in /docs or otherwise) |
+|Docs: what: point descriptions of each class/function (in isolation) | 0 |  Couldn't find what documentation
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 0 | couldn't find how documentation |
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 0 | couldn't find why documentation 
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 0 | no documentation video present
 |Use of version control tools|-score- | 
 |Use of style checkers |config files in GH showing your config|-score- | 
 |Use of code formatters. |-score- | config files in GH showing your this formatter's  config|
