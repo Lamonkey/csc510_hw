@@ -21,12 +21,12 @@
 |Use of syntax checkers. |-score- | config files iin  GH showing this checker's config  |
 |Use of code coverage |-score- | config files in GH|
 |Other automated analysis tools|-score- | config files in GH|
-|Test cases exist|-score- | dozens of tests and those test cases are more than 30% of the code base|
-|Test cases are routinely executed|-score- | E.g. travis-com.com or github actions or something|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|-score- | 
-|Issues are discussed before they are closed|-score- | even if you discuss in slack, need a sumamry statement here|
-|Chat channel: exists|-score- | Link or screenshots|
-|Test cases: a large proportion of the issues related to handling failing cases.|-score- | If a test case fails, open an issue and fix it|
+|Test cases exist| 3 | Tests exist but no coverage is given https://github.com/ShiveshJha12/SE_group28_HW2/blob/main/test/test_egfunctions.py|
+|Test cases are routinely executed| 3 | Uses circleci to test https://github.com/ShiveshJha12/SE_group28_HW2/blob/main/.circleci/config.yml|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 2 | Not very infromative https://github.com/ShiveshJha12/SE_group28_HW2/blob/main/CONTRIBUTING.md|
+|Issues are discussed before they are closed| 0 | No issues closed or opened https://github.com/ShiveshJha12/SE_group28_HW2/issues|
+|Chat channel: exists| 0 | Not relevant to homeworks|
+|Test cases: a large proportion of the issues related to handling failing cases.| 0 | No issues opened or closed https://github.com/ShiveshJha12/SE_group28_HW2/issues|
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 | all files and tools accessible | 
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 3 | config files and requirements files are in repo |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 | n/a for hw5 | 
