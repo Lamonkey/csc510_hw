@@ -8,13 +8,15 @@
 | Number of commits                                                                                          | 3         | https://github.com/sohambapat/SWE-Group-32-Assignments/pulse               |
 | Number of commits: by different people                                                                     | 1         | Lowest is 4 and highest is 28, high disparity: https://github.com/sohambapat/SWE-Group-32-Assignments/graphs/contributors |
 | Issues reports: there are **many**                                                                             | 0         | There are no issues: https://github.com/sohambapat/SWE-Group-32-Assignments/issues              |
-|Issues are being closed|-score- | evidence in GH|
-|DOI badge: exists|-score- | in GH|
-|Docs: doco generated, format not ugly |-score- | in GH|
-|Docs: what: point descriptions of each class/function (in isolation) |-score- | 
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|-score- | doc page entries|
-|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|-score- | 
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|-score- | 
+|Issues are being closed| 0 | No issues: https://github.com/sohambapat/SWE-Group-32-Assignments/issues|
+|DOI badge: exists| 3 | Exists: https://zenodo.org/badge/latestdoi/531687580|
+|Docs: doco generated, format not ugly | 0 | No generated docs |
+|Docs: what: point descriptions of each class/function (in isolation) | 0 |  No what documentation
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 1 |N[o how documentation](https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/INSTALL.md)|
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 0 | no video present
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 1 | Install.md and how documentation barebones:  https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/INSTALL.md|
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 0 | no why documentation 
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 0 | no video present
 |Use of version control tools|-score- | 
 |Use of style checkers |config files in GH showing your config|-score- | 
 |Use of code formatters. |-score- | config files in GH showing your this formatter's  config|
