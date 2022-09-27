@@ -17,55 +17,48 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Build virtual environment
-      run: | 
-        python3 -m venv venv
-        source venv/bin/activate
-    - name: Test with custom test engine through coverage.py
-      run: |
-        python3 -m coverage run --source=code -m code.main -e ALL
-    - id: Get_Coverage_Report
-      run: |
-        codecov=$(python3 -m coverage report -m)
-        echo "$codecov"
-        regex="TOTAL.+[ ]([0-9]?[0-9]?[0-9])%"
-        if  [[ $codecov =~ $regex ]]
-        then
-          echo "##[set-output name=total_coverage;]${BASH_REMATCH[1]}%"
-        fi
-    - name: Generate Documentation
-      run: |
-        pdoc --html code --force --output-dir docs
-        echo ${{ github.ref }}
-        git add .
-        git config --local user.name "auto-generate doc"
-        git diff-index --quiet HEAD || git commit -m "CI: Automated build push" -a
-    - name: Push Documentation
-      if: github.ref == 'refs/heads/main'
-      uses: ad-m/github-push-action@master
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Get Badge for Coverage Report 
-      uses: RubbaBoy/BYOB@v1.3.0
-      with:
-        NAME: coverage_report
-        LABEL: 'Total Coverage'
-        STATUS: ${{ steps.Get_Coverage_Report.outputs.total_coverage }}
-        COLOR: 00EEFF
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Build virtual environment
+        run: | 
+          python3 -m venv venv
+          source venv/bin/activate
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Configure PYTHONPATH
+        run: |
+          python3 -c "import sys;
+          from os.path import dirname;
+          absolute_path = sys.path;
+          code_path = '"/code"';
+          test_path = '"/test"'';
+          code_full_path = dirname(absolute_path) + code_path;
+          test_full_path = dirname(absolute_path) + test_path;
+          sys.path.append(code_full_path);
+          sys.path.append(test_full_path);
+          print(sys.path)"
+      - name: Generate Documentation
+        run: |
+          pdoc --html code --force --output-dir docs
+          echo ${{ github.ref }}
+          git add .
+          git config --local user.name "auto-generate doc"
+          git diff-index --quiet HEAD || git commit -m "CI: Automated build push" -a
+      - name: Push Documentation
+        if: github.ref == 'refs/heads/main'
+        uses: ad-m/github-push-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
