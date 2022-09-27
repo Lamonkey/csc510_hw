@@ -42,8 +42,8 @@ jobs:
         run: |
           pwd
           python3 -c "import sys;
-          sys.path.append("/home/runner/work/csc510_hw/csc510_hw/test");
-          sys.path.append("/home/runner/work/csc510_hw/csc510_hw/code");
+          sys.path.append('"/home/runner/work/csc510_hw/csc510_hw/test"');
+          sys.path.append('"/home/runner/work/csc510_hw/csc510_hw/code"');
 
           print(sys.path)"
       - name: Generate Documentation
