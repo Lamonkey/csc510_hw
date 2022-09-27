@@ -21,12 +21,12 @@
 |Use of syntax checkers. |-score- | config files iin  GH showing this checker's config  |
 |Use of code coverage |-score- | config files in GH|
 |Other automated analysis tools|-score- | config files in GH|
-|Test cases exist|-score- | dozens of tests and those test cases are more than 30% of the code base|
-|Test cases are routinely executed|-score- | E.g. travis-com.com or github actions or something|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|-score- | 
-|Issues are discussed before they are closed|-score- | even if you discuss in slack, need a sumamry statement here|
-|Chat channel: exists|-score- | Link or screenshots|
-|Test cases: a large proportion of the issues related to handling failing cases.|-score- | If a test case fails, open an issue and fix it|
+|Test cases exist| 2 | No code coverage is given https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/test/test.py|
+|Test cases are routinely executed| 3 | Runs tests on every commit https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/.github/workflows/post-commit.yml|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 3 | Very well made CONTRIBUTING.md file https://github.com/sohambapat/SWE-Group-32-Assignments/blob/main/CONTRIBUTING.md|
+|Issues are discussed before they are closed| 0 | No issues were opened https://github.com/sohambapat/SWE-Group-32-Assignments/issues|
+|Chat channel: exists| 0 | Not relevant to homeworks|
+|Test cases: a large proportion of the issues related to handling failing cases.| 0 | No failing test cases were opened as issues https://github.com/sohambapat/SWE-Group-32-Assignments/issues|
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 | all tools and files accessible |
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 3 | requirements and config files are in repo. not many tools to specify |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 | n/a for hw5|
