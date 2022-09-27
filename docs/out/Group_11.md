@@ -8,13 +8,13 @@
 | Number of commits                                                                                          | 3         | https://github.com/Surya-06/SE-Proj22-Team11/pulse               |
 | Number of commits: by different people                                                                     | 3         | Evenly distributed: https://github.com/Surya-06/SE-Proj22-Team11/graphs/contributors |
 | Issues reports: there are **many**                                                                             | 0         | There is only 1: https://github.com/Surya-06/SE-Proj22-Team11/issues              |
-|Issues are being closed|-score- | evidence in GH|
-|DOI badge: exists|-score- | in GH|
-|Docs: doco generated, format not ugly |-score- | in GH|
-|Docs: what: point descriptions of each class/function (in isolation) |-score- | 
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|-score- | doc page entries|
-|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|-score- | 
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|-score- | 
+|Issues are being closed|3 | only issue was closed: https://github.com/Surya-06/SE-Proj22-Team11/issues  |
+|DOI badge: exists| 3 | Exists: https://zenodo.org/badge/latestdoi/527815538|
+|Docs: doco generated, format not ugly | 0 | no generated docs|
+|Docs: what: point descriptions of each class/function (in isolation) | 0 | No what documentation 
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 1 | barebones install.md: https://github.com/Surya-06/SE-Proj22-Team11/blob/main/INSTALL.md |
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 1 | Barebones readme: https://github.com/Surya-06/SE-Proj22-Team11#readme
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 0 | no video
 |Use of version control tools|-score- | 
 |Use of style checkers |config files in GH showing your config|-score- | 
 |Use of code formatters. |-score- | config files in GH showing your this formatter's  config|
