@@ -17,7 +17,7 @@
 | Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | 1     | Barebones readme: https://github.com/Surya-06/SE-Proj22-Team11#readme |
 | Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. | 0     | no video                                                     |
 | Use of version control tools                                 | 3     | used GitHub                                                  |
-| Use of style checkers                                        | 0     | -score-                                                      |
+| Use of style checkers                                        | 0     | no config file for this                                                    |
 | Use of code formatters.                                      | 0     | no config file for this                                      |
 | Use of syntax checkers.                                      | 0     | no config file for this                                      |
 | Use of code coverage                                         | 3     | has a badge and link to the report                           |
