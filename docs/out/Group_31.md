@@ -8,7 +8,7 @@
 | Number of commits                                                                                          | 3         | https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/pulse               |
 | Number of commits: by different people                                                                     | 3         | https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/graphs/contributors |
 | Issues reports: there are **many**                                                                             | 2         | There are only 7 issues: https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/issues              |
-|Issues are being closed|-score- | evidence in GH|
+|Issues are being closed| 3 | All Issues Closed: https://github.com/CSC-510-Team-31/CSC_510-Team-31_HW2345/issues?q=is%3Aissue+is%3Aclosed |
 |DOI badge: exists|-score- | in GH|
 |Docs: doco generated, format not ugly |-score- | in GH|
 |Docs: what: point descriptions of each class/function (in isolation) |-score- | 
