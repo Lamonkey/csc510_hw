@@ -38,7 +38,9 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Configure PYTHONPATH
+        run: |
+          export PYTHONPATH="$PWD/code"
       - name: Generate Documentation
         run: |
           pdoc --html code --force --output-dir docs
