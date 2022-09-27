@@ -44,6 +44,7 @@ class Sym:
             self.data[v] = self.data.setdefault(v, 0) + 1 #https://docs.python.org/3/library/stdtypes.html#dict.setdefault
     #return None if data is empty
     def mid(self): #TODO does col, most, or mode need to be a parameter?
+        &#34;&#34;&#34;Returns the most common symbol.&#34;&#34;&#34;
         most = -1
         mode = None
         for k,v in self.data.items():
@@ -52,6 +53,7 @@ class Sym:
         return mode
     
     def div(self): #TODO does e or fun need to be a parameter?
+        &#34;&#34;&#34;Returns the entropy of the symbol column.&#34;&#34;&#34;
         e = 0
         def fun(p):
             return p*math.log(p,2)
@@ -97,6 +99,7 @@ Defines interface for adding symbols, and mid and div functions for summaries of
             self.data[v] = self.data.setdefault(v, 0) + 1 #https://docs.python.org/3/library/stdtypes.html#dict.setdefault
     #return None if data is empty
     def mid(self): #TODO does col, most, or mode need to be a parameter?
+        &#34;&#34;&#34;Returns the most common symbol.&#34;&#34;&#34;
         most = -1
         mode = None
         for k,v in self.data.items():
@@ -105,6 +108,7 @@ Defines interface for adding symbols, and mid and div functions for summaries of
         return mode
     
     def div(self): #TODO does e or fun need to be a parameter?
+        &#34;&#34;&#34;Returns the entropy of the symbol column.&#34;&#34;&#34;
         e = 0
         def fun(p):
             return p*math.log(p,2)
@@ -135,12 +139,13 @@ Defines interface for adding symbols, and mid and div functions for summaries of
 <span>def <span class="ident">div</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Returns the entropy of the symbol column.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def div(self): #TODO does e or fun need to be a parameter?
+    &#34;&#34;&#34;Returns the entropy of the symbol column.&#34;&#34;&#34;
     e = 0
     def fun(p):
         return p*math.log(p,2)
@@ -154,12 +159,13 @@ Defines interface for adding symbols, and mid and div functions for summaries of
 <span>def <span class="ident">mid</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Returns the most common symbol.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def mid(self): #TODO does col, most, or mode need to be a parameter?
+    &#34;&#34;&#34;Returns the most common symbol.&#34;&#34;&#34;
     most = -1
     mode = None
     for k,v in self.data.items():

@@ -43,7 +43,9 @@ OPTIONS:
  -S --seperator feild seperator = ,&#39;&#39;&#39;
 
 class Config:
+    &#34;&#34;&#34;Generates and stores mappings parsed from command line.&#34;&#34;&#34;
     def __init__(self):
+        &#34;&#34;&#34;Initialize mapping structure, parsing help structure.&#34;&#34;&#34;
         self.the = {}  # Initialize &#39;the&#39; to map command line arguments to their associated value
         # For each line in the given help statement, build a new mapping in &#39;the&#39;
         for k, x in re.findall(&#39;\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)&#39;, help):
@@ -122,13 +124,16 @@ class Config:
 <span>class <span class="ident">Config</span></span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Generates and stores mappings parsed from command line.</p>
+<p>Initialize mapping structure, parsing help structure.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Config:
+    &#34;&#34;&#34;Generates and stores mappings parsed from command line.&#34;&#34;&#34;
     def __init__(self):
+        &#34;&#34;&#34;Initialize mapping structure, parsing help structure.&#34;&#34;&#34;
         self.the = {}  # Initialize &#39;the&#39; to map command line arguments to their associated value
         # For each line in the given help statement, build a new mapping in &#39;the&#39;
         for k, x in re.findall(&#39;\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)&#39;, help):

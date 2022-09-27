@@ -31,6 +31,7 @@ from code.Row import Row
 import os.path
 
 class Data:
+    &#34;&#34;&#34;Summary for a data sheet. Takes in a csv file and generates appropriate rows and columns.&#34;&#34;&#34;
     def __init__(self, source):
         self.cols = None
         self.rows = []
@@ -63,7 +64,6 @@ class Data:
                 print(&#34;File&#34;, source, &#34;does not exist&#34;)
                 
     def add(self, xs):
-        
         &#39;&#39;&#39;
         Add a new row to the data
          - xs: The new &#34;row&#34; to be added to data
@@ -131,12 +131,13 @@ class Data:
 <span>(</span><span>source)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Summary for a data sheet. Takes in a csv file and generates appropriate rows and columns.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Data:
+    &#34;&#34;&#34;Summary for a data sheet. Takes in a csv file and generates appropriate rows and columns.&#34;&#34;&#34;
     def __init__(self, source):
         self.cols = None
         self.rows = []
@@ -169,7 +170,6 @@ class Data:
                 print(&#34;File&#34;, source, &#34;does not exist&#34;)
                 
     def add(self, xs):
-        
         &#39;&#39;&#39;
         Add a new row to the data
          - xs: The new &#34;row&#34; to be added to data
@@ -236,7 +236,6 @@ Returns: None</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def add(self, xs):
-    
     &#39;&#39;&#39;
     Add a new row to the data
      - xs: The new &#34;row&#34; to be added to data
