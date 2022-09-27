@@ -21,12 +21,12 @@
 |Use of syntax checkers. |-score- | config files iin  GH showing this checker's config  |
 |Use of code coverage |-score- | config files in GH|
 |Other automated analysis tools|-score- | config files in GH|
-|Test cases exist|-score- | dozens of tests and those test cases are more than 30% of the code base|
-|Test cases are routinely executed|-score- | E.g. travis-com.com or github actions or something|
-|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|-score- | 
-|Issues are discussed before they are closed|-score- | even if you discuss in slack, need a sumamry statement here|
-|Chat channel: exists|-score- | Link or screenshots|
-|Test cases: a large proportion of the issues related to handling failing cases.|-score- | If a test case fails, open an issue and fix it|
+|Test cases exist| 3 | All test cases exist with 75% code coverage https://github.com/Surya-06/SE-Proj22-Team11/blob/main/Test/test_eg.py|
+|Test cases are routinely executed| 3 | https://github.com/Surya-06/SE-Proj22-Team11/blob/main/.github/workflows/build-test.yaml|
+|The files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| 2 | File is not very informative https://github.com/Surya-06/SE-Proj22-Team11/blob/main/contributing.md |
+|Issues are discussed before they are closed| 1 | Only one issue was documented https://github.com/Surya-06/SE-Proj22-Team11/issues?q=is%3Aissue+is%3Aclosed|
+|Chat channel: exists| 0 | Not relevant for the homeworks|
+|Test cases: a large proportion of the issues related to handling failing cases.| 0 | No issues opened for failing test cases https://github.com/Surya-06/SE-Proj22-Team11/issues?q=is%3Aissue+is%3Aclosed|
 |Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 | all files and tools accessible |
 |Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 3 | [requirements and python version in repo](https://github.com/Surya-06/SE-Proj22-Team11/blob/main/requirements.txt) |
 |Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 | n/a for hw5 | 
