@@ -27,8 +27,8 @@ but nevertheless, here is a track record that everyone is contributing a lot)|-s
 |Issues are discussed before they are closed|-score- | even if you discuss in slack, need a sumamry statement here|
 |Chat channel: exists|-score- | Link or screenshots|
 |Test cases: a large proportion of the issues related to handling failing cases.|-score- | If a test case fails, open an issue and fix it|
-|Evidence that the whole team is using the same tools: everyone can get to all tools and files|-score- | 
-|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)|-score- | 
-|Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)|-score- | 
-|Evidence that the members of the team are working across multiple places in the code base|-score- | 
-|Short release cycles |-score- |  (hard to see in short projects) project members are committing often enough so that everyone can get your work|
+|Evidence that the whole team is using the same tools: everyone can get to all tools and files| 3 | all tools and files accessible |
+|Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 3 | requirements and config files are in repo. not many tools to specify |
+|Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 0 | n/a for hw5|
+|Evidence that the members of the team are working across multiple places in the code base| 2 | people are contributing in different places but seems slightly [imbalanced](https://github.com/sohambapat/SWE-Group-32-Assignments/graphs/contributors)|
+|Short release cycles | 3 |  (hard to see in short projects) consistent and frequent [commits](https://github.com/sohambapat/SWE-Group-32-Assignments/graphs/contributors)|
