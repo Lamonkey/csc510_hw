@@ -1,13 +1,13 @@
 # Repo: https://github.com/sohambapat/SWE-Group-32-Assignments
 |Notes|score|evidence|
 |-----|-----|---------|
-|Video1| -score- | For people starting with 2020 or 2021 projects, 2min video of old functionality| 
-|Video2|-score- | For people starting with 2020 or 2021 projects, 2min video of new functionality, showing a significant delta from old. For everyone else, 2min video of all functionality.| 
-|Workload is spread over the whole team (one team member is often Xtimes more productive than the others... 
-but nevertheless, here is a track record that everyone is contributing a lot)|-score- | evidence in GH|
-|Number of commits|-score- | in GH|
-|Number of commits: by different people|-score- | in GH|
-|Issues reports: there are **many**|-score- | 
+| Video1                                                                                                     | 0         | Not relevant for HW                                                |
+| Video2                                                                                                     | 0         | Not relevant for HW                                                |
+| Workload is spread over the whole team (one team member is often Xtimes more productive than the others... |           |                                                                    |
+| but nevertheless, here is a track record that everyone is contributing a lot)                              | 1         | Uneven distribution of work: https://github.com/sohambapat/SWE-Group-32-Assignments/graphs/contributors |
+| Number of commits                                                                                          | 3         | https://github.com/sohambapat/SWE-Group-32-Assignments/pulse               |
+| Number of commits: by different people                                                                     | 1         | Lowest is 4 and highest is 28, high disparity: https://github.com/sohambapat/SWE-Group-32-Assignments/graphs/contributors |
+| Issues reports: there are **many**                                                                             | 0         | There are no issues: https://github.com/sohambapat/SWE-Group-32-Assignments/issues              |
 |Issues are being closed|-score- | evidence in GH|
 |DOI badge: exists|-score- | in GH|
 |Docs: doco generated, format not ugly |-score- | in GH|
